@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PDF Feuilletable</title>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tesseract.js/4.0.2/tesseract.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="turn.min.js" defer></script>
+<script src="turn.js" defer></script>
+<script src="animation.js?v=1" defer></script>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#000000">
+<link rel="icon" href="data:,">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button id="toggle-toc" class="bouton">Sommaire</button>
+  <div class="search-bar">
+      <input type="text" id="search-input" placeholder="Rechercher un mot-clé">
+      <button id="search-button">🔍</button>
+      <ul id="suggestion-list" class="suggestion-list"></ul>
+  </div>
+
+  <div class="file-upload">
+      <input type="file" id="pdf-upload" accept="application/pdf">
+  </div>
+
+  <div id="toc-container">
+    <h2>Sommaire</h2>
+    <ul id="toc-list"></ul>
+</div>
+
+
+  <div id="flipbook"></div>
+
+  <div class="controls">
+      <button id="prev-page" class="bouton">◀</button>
+      <button id="next-page" class="bouton">▶</button>
+  </div>
+
+
+  <div class="page-selector">
+      <input type="number" id="page-input" min="1" placeholder="Numéro de page">
+      <button id="go-to-page" class="bouton">Aller</button>
+  </div>
+
+  <span id="page-info" class="page-indicator">Page 1</span>
+
+
+</body>
+
+</html>
